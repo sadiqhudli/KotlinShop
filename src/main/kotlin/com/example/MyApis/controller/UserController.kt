@@ -21,6 +21,7 @@ class UserController(@Autowired private val userService: UserService) {
     }
 
     // localhost:8080/api/user:: this end point get all user
+    // localhost:8088/api/user:: this end point get all user
     @GetMapping
     fun getAllUsers():ResponseEntity<List<User>> = ResponseEntity.ok(userService.getAllUsers())
 
@@ -34,7 +35,6 @@ class UserController(@Autowired private val userService: UserService) {
     // localhost:8080/api/user  this end point u get user by id
     @GetMapping("/id/{id}")
     fun userbyId(@PathVariable id: String):ResponseEntity<User> = ResponseEntity.ok(userService.userbyId(id))
-
 
 
     // localhost:8080/api/user  this end point u delect user by id in db
