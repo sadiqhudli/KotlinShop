@@ -1,20 +1,25 @@
 package com.example.MyApis.repostory
 
-import com.example.MyApis.model.User
-import org.springframework.data.mongodb.repository.MongoRepository
-import org.springframework.data.mongodb.repository.Query
-import java.util.Optional
 
 
-interface UserRepository : MongoRepository<User,String>{
+import com.example.MyApis.model.userInfo.entity.UserInfo
+import com.example.MyApis.model.userInfo.response.UserResponse
+import org.springframework.data.repository.CrudRepository
+import org.springframework.http.ResponseEntity
+import org.springframework.stereotype.Repository
 
 
 
-    @Query("{'name':?0}")
-    fun findByName(name:String): Optional<User>
 
-
+@Repository
+interface UserRepository :CrudRepository<UserInfo,Int> {
 
 
 }
+
+
+
+
+
+
 
