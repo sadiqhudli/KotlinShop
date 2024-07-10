@@ -14,8 +14,8 @@ data class Categories(
     @Column(nullable = false, unique = true)
     val urlSlug: String,
 
+    // val id_categories: Int,
+    //    val category_name: String,
+    //    val urlSlug: String
 
-   // @ManyToOne(fetch = FetchType.LAZY)
-    //@JoinColumn(name = "parent_cat_id")
-  //  val parentCategory: Locale.Category? = null,
 )
