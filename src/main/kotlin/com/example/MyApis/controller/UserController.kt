@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*
 class UserController( private val userService: UserService) {
 
 
-
     // localhost:8888/api/user
     // :: this end point get all user
     // localhost:8088/api/user:: this end point get all user
@@ -29,16 +28,21 @@ class UserController( private val userService: UserService) {
     @GetMapping()
     fun getAllUser():List<UserResponse>{
         val users = userService.getAllUsers()
-
         return users.map { it.toResponse("User fetched successfully") }
     }
-
 
     //localhost:8888/api/user/id
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Int): UserResponse {
         val userInfo = userService.getUserById(id)
         return userInfo.toResponse("User fetched successfully")
+    }
+
+    @DeleteMapping("{id}")
+    fun deleteByUser(id: Int):String{
+
+       val res= userService.deleteById(id)
+        return "successfully $res"
     }
 
     }
