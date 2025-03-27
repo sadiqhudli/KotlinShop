@@ -1,12 +1,8 @@
 package com.example.MyApis.repostory
 
-import com.example.MyApis.model.categories.entity.Categories
-import org.springframework.data.repository.CrudRepository
-import org.springframework.stereotype.Repository
+import com.example.MyApis.model.Category
+import org.springframework.data.jpa.repository.JpaRepository
 
-
-@Repository
-interface CategoryRep :CrudRepository<Categories,Int> {
-
+interface CategoryRepo :JpaRepository<Category,Int> {
 
 }
